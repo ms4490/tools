@@ -30,4 +30,33 @@ https://nodejs.org/en/
     "grunt-usemin": "^3.1.1"  
   }  
 }
+```  
+### Gruntfile.js
+```
+module.exports = function(grunt) {
+
+  // 插件配置
+  grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
+    uglify: {
+      options: {
+        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+      },
+      build: {
+        src: 'src/<%= pkg.name %>.js',
+        dest: 'build/<%= pkg.name %>.min.js'
+      }
+    }
+  });
+
+  // 加载任务插件
+  grunt.file.defaultEncoding = 'UTF-8';
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  // 默认被执行的任务列表
+  grunt.registerTask('default', ['jshint', 'uglify', 'concat', 'cssmin','watch']);
+};
 ```
