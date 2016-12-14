@@ -14,6 +14,7 @@ https://nodejs.org/en/
 > npm install grunt-contrib-jshint --save-dev 检查js语法  
 > npm install grunt-contrib-cssmin --save-dev 压缩css  
 > npm install grunt-contrib-concat --save-dev 合并  
+
 ### package.json
 {  
   "name": "",//名字  
