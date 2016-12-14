@@ -30,7 +30,7 @@ https://nodejs.org/en/
     "grunt-usemin": "^3.1.1"  
   }  
 }
-```  
+```
 ### Gruntfile.js
 ```
 module.exports = function(grunt) {
