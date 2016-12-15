@@ -34,7 +34,6 @@ https://nodejs.org/en/
 ### Gruntfile.js
 ```
 module.exports = function(grunt) {
-
   // 插件配置
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -48,7 +47,6 @@ module.exports = function(grunt) {
       }
     }
   });
-
   // 加载任务插件
   grunt.file.defaultEncoding = 'UTF-8';
   grunt.loadNpmTasks('grunt-contrib-uglify');
