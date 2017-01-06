@@ -37,7 +37,8 @@ module.exports = function(grunt) {
   // 插件配置
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    uglify: {
+    //uglify配置
+    uglify: {
       options: {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
@@ -45,8 +46,25 @@ module.exports = function(grunt) {
         src: 'src/<%= pkg.name %>.js',
         dest: 'build/<%= pkg.name %>.min.js'
       }
+    },
+    //concat配置
+    concat: {
+      options: {
+        separator: ';',
+      },
+      dist: {
+        src: [],
+        dest: '',
+      }
+    },
+    //wacth配置
+    watch: {
+        build: {
+            files: [],
+            tasks: ['jshint', 'uglify', 'concat', 'cssmin']
+        }
     }
-  });
+  });
   // 加载任务插件
   grunt.file.defaultEncoding = 'UTF-8';
   grunt.loadNpmTasks('grunt-contrib-uglify');
