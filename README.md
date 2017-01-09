@@ -63,7 +63,8 @@ module.exports = function(grunt) {
             files: [],
             tasks: ['jshint', 'uglify', 'concat', 'cssmin']
         }
-    }
+    },
+    //
   });
   // 加载任务插件
   grunt.file.defaultEncoding = 'UTF-8';
