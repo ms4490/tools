@@ -43,8 +43,8 @@ module.exports = function(grunt) {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       build: {
-        src: 'src/<%= pkg.name %>.js',
-        dest: 'build/<%= pkg.name %>.min.js'
+        src: '',
+        dest: ''
       }
     },
     //concat配置
@@ -64,7 +64,8 @@ module.exports = function(grunt) {
             tasks: ['jshint', 'uglify', 'concat', 'cssmin']
         }
     },
-    //
+    //cssmin配置
+    
   });
   // 加载任务插件
   grunt.file.defaultEncoding = 'UTF-8';
